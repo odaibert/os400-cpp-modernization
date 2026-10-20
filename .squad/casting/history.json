@@ -1,0 +1,13 @@
+{
+  "universe_usage_history": [
+    {"universe": "The Matrix", "assignment_id": "os400-reinvention-planning-2026-10-19", "used_at": "2026-10-19T12:38:02.891-04:00"}
+  ],
+  "assignment_cast_snapshots": {
+    "os400-reinvention-planning-2026-10-19": {
+      "universe": "The Matrix",
+      "agents": {"morpheus": "Morpheus", "trinity": "Trinity", "neo": "Neo", "switch": "Switch", "tank": "Tank", "scribe": "Scribe", "ralph": "Ralph", "rai": "Rai", "fact-checker": "Fact Checker"},
+      "created_at": "2026-10-19T12:38:02.891-04:00",
+      "note": "User-approved specialist cast; built-ins retain their approved names. Ralph is dormant."
+    }
+  }
+}

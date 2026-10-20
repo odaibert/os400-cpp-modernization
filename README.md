@@ -93,6 +93,10 @@ Card       : VISA
 | [Copilot Prompts](docs/copilot-prompts.md) | Copy-paste prompts for endianness refactoring, code explanation, and EBCDIC-to-UTF-8. |
 | [Replication Task Plan](docs/replication-task-plan.md) | Step-by-step tasks with Copilot prompts to reproduce this entire solution from scratch. |
 
+### Reinvention proposal — not shipped capabilities
+
+[Research and reinvention plan](docs/reinvention/README.md): an optional, evidence-backed modernization knowledge workbench. This is planning only; no graph, retrieval service, or agent runtime is implemented or approved.
+
 ## References
 
 - [C++ Language Documentation — Microsoft Learn](https://learn.microsoft.com/cpp/cpp/)
