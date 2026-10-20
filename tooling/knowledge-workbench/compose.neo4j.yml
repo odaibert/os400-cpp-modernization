@@ -1,0 +1,27 @@
+services:
+  neo4j:
+    image: neo4j:5.26-community@sha256:0a6e7aedf54a531f76286032d4365ead65b11cca05e4a15cdf23b8e53d6db02b
+    container_name: os400-knowledge-workbench-neo4j
+    ports:
+      - "127.0.0.1:7474:7474"
+      - "127.0.0.1:7687:7687"
+    environment:
+      NEO4J_AUTH: none
+      NEO4J_dbms_usage__report_enabled: "false"
+      NEO4J_server_memory_heap_initial__size: 256m
+      NEO4J_server_memory_heap_max__size: 512m
+      NEO4J_server_memory_pagecache_size: 256m
+    volumes:
+      - neo4j-data:/data
+    mem_limit: 1536m
+    restart: "no"
+    healthcheck:
+      test: ["CMD", "cypher-shell", "-a", "bolt://localhost:7687", "RETURN 1;"]
+      start_period: 30s
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  neo4j-data:
+    name: os400-knowledge-workbench-neo4j-data

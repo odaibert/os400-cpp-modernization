@@ -1,0 +1,13 @@
+{
+  "agents": {
+    "morpheus": {"persistent_name": "Morpheus", "universe": "The Matrix", "created_at": "2026-10-19T12:38:02.891-04:00", "legacy_named": false, "status": "active", "role": "Architecture Lead"},
+    "trinity": {"persistent_name": "Trinity", "universe": "The Matrix", "created_at": "2026-10-19T12:38:02.891-04:00", "legacy_named": false, "status": "active", "role": "C++ Modernization Specialist"},
+    "neo": {"persistent_name": "Neo", "universe": "The Matrix", "created_at": "2026-10-19T12:38:02.891-04:00", "legacy_named": false, "status": "active", "role": "Knowledge Graph Engineer"},
+    "switch": {"persistent_name": "Switch", "universe": "The Matrix", "created_at": "2026-10-19T12:38:02.891-04:00", "legacy_named": false, "status": "active", "role": "Retrieval & Agent Engineer"},
+    "tank": {"persistent_name": "Tank", "universe": "The Matrix", "created_at": "2026-10-19T12:38:02.891-04:00", "legacy_named": false, "status": "active", "role": "Quality & Evaluation Engineer"},
+    "scribe": {"persistent_name": "Scribe", "universe": "The Matrix", "created_at": "2026-10-19T12:38:02.891-04:00", "legacy_named": false, "status": "active", "builtin": true},
+    "ralph": {"persistent_name": "Ralph", "universe": "The Matrix", "created_at": "2026-10-19T12:38:02.891-04:00", "legacy_named": false, "status": "inactive", "builtin": true},
+    "rai": {"persistent_name": "Rai", "universe": "The Matrix", "created_at": "2026-10-19T12:38:02.891-04:00", "legacy_named": false, "status": "active", "builtin": true, "charter": ".squad/agents/Rai/charter.md"},
+    "fact-checker": {"persistent_name": "Fact Checker", "universe": "The Matrix", "created_at": "2026-10-19T12:38:02.891-04:00", "legacy_named": false, "status": "active", "builtin": true}
+  }
+}
