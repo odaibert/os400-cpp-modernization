@@ -2,6 +2,11 @@
 
 **Assessor:** Morpheus, Architecture Lead. **Requested by:** odaibert. **Date:** 2026-10-19.
 
+> **Historical snapshot:** the local workbench was added after this assessment.
+> Statements about absent graph tooling and quoted README claims below describe
+> the inspected revision, not the current repository. See the
+> [current implementation summary](README.md#current-implementation-versus-proposal).
+
 **Scope:** repository discovery and a phased reinvention plan, not implementation. All observations below concern the original application at revision `d3d183bca292e365cf0eb8a78ebef7ba5ddea3a2` unless explicitly labeled **proposal** or **bootstrap**. Source line references are relative to this document and remain valid because original application files and guides were not edited.
 
 ## 1. Executive finding and preservation contract

@@ -1,9 +1,18 @@
 # OS/400 C++ knowledge workbench
 
-An additive local tool for exploring C++ declarations, fields, calls and include
-dependencies in Neo4j, with source evidence and optional Markdown exports.
+An additive local tool for exploring C++ declarations, fields, calls and
+references in Neo4j, with source evidence, guarded conversion drafts, private
+SQLite history and optional Markdown exports. Includes are checked as parser
+inputs; the graph is not a complete build or include-dependency model.
 The original endian demonstration, CMake project and four original guides are
 independent of this tool.
+
+For the repository overview, see the [root README](../../README.md). The
+[browser guide](web/README.md) covers interaction details. The
+[architecture design](../../docs/workbench-architecture.md) documents the
+implemented components, flows, storage and trust boundaries. The
+[reinvention documents](../../docs/reinvention/README.md) are historical research
+and proposals, not a current feature inventory or completed milestone report.
 
 ## Boundaries
 
@@ -31,7 +40,7 @@ establish IBM XL/ILE C++, IBM i/big-endian or Linux x86 compatibility.
 
 ## Setup
 
-Use Python 3.11+ and a supported Node.js LTS installation. Install dependencies
+Use Python 3.11+ and Node 22.12+ (22.x) or Node 24+. Install dependencies
 in this tool's own environment, not in the original C++ project:
 
 ```sh
@@ -126,6 +135,9 @@ foreground application. For the Docker development database, retain the
 
 Open `http://127.0.0.1:8766/`, select `endian-demo`, then assess and generate.
 Expand **Assessed sources** to review the C++-only inventory before generation.
+Use **C++20** for this repository: `src/pos_transaction_x86.cpp` uses
+`std::endian`, which is not available in C++17. The C++17 profile remains useful
+for compatible inputs; it is not appropriate for analysing both demo files.
 Existing graphs containing Markdown/build inputs must be regenerated after this
 scope change. For an authenticated database, add `--prompt-password` before
 `serve` or other database commands; it reads a hidden password for that process
@@ -189,6 +201,20 @@ A check times out after 12 seconds. `/api/health` checks Neo4j;
 `/api/health/sqlite` queries the conversion-history tables and checks the SQLite
 schema version. Both endpoints require a local session. These checks do not
 scan repository sources, load or generate graphs, start Docker or bypass authentication.
+A green connection light confirms database access only. Graph completeness,
+source freshness, compiler settings and conversion safety are separate checks.
+
+## Troubleshooting
+
+| Symptom | Action |
+|---|---|
+| No graph shown after opening the page or selecting a repository | Expected: choose **Assess repository** and **Generate graph**, or explicitly **Load current graph**. Connection checks do not generate graphs. |
+| Four `compiler_error` diagnostics for `src/pos_transaction_x86.cpp` under C++17 | Select **C++20**, reassess and explicitly generate a replacement. `std::endian` requires C++20; changing the dropdown does not repair an existing generation. Other compiler diagnostics can have different causes. |
+| Neo4j indicator is red | Check the dedicated local database, URI and explicit authentication mode. Do not embed passwords in URLs or disable authentication to bypass an authenticated instance. |
+| SQLite indicator is red | Check access to the configured private state directory and recover its database/schema as appropriate. Do not delete history or substitute an empty success response to hide an error. |
+| Conversion cannot start despite green connection lights | Explicitly **Refresh graph context** and check completeness, source freshness and matching profile settings. Regenerate older graphs and start a fresh conversion when safety rules changed. |
+| A saved job is interrupted or its output is outdated | Interrupted jobs never resume automatically. Recheck the graph and start a new conversion; older recipe versions are not revalidated by reopening history. |
+| A CLI writer reports `job_store_busy` | Stop the API or other writer using the same state directory before `register`, `generate` or `remove`. |
 
 ## Guarded OS/400 C++ conversion
 

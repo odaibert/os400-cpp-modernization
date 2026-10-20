@@ -2,6 +2,12 @@
 
 **Planning context and access date: 2026-10-19.** Research by Switch, Retrieval & Agent Engineer. This is a proposal, not authorization to implement, buy services, upload source code, or deploy infrastructure.
 
+> **Historical research:** the alternatives and experiments below are proposals,
+> not a current storage inventory. The implemented workbench uses Neo4j for graphs
+> and SQLite for private conversion history. See the
+> [current implementation summary](README.md#current-implementation-versus-proposal)
+> before applying these recommendations.
+
 ## Recommendation and boundaries
 
 Start with a small, local, source-cited migration-understanding experiment, not a graph-platform rewrite. README.md and CMakeLists.txt describe two C++ executables (`pos_legacy`, C++17; `pos_modern`, C++20) and migration guides. They do not establish an existing retrieval platform, graph service, ingestion pipeline, or benchmark suite. The source files were not inspected for this research; the schema and sample questions below are hypotheses to validate, not extracted code facts.

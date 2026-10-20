@@ -2,6 +2,12 @@
 
 **Author:** Morpheus, Architecture Lead. **Planning date:** 2026-10-19. **Requested by:** odaibert.
 
+> **Historical proposal:** the later local workbench is documented in the
+> [current implementation summary](README.md#current-implementation-versus-proposal).
+> Its existence does not complete this plan's evaluation gates, establish the
+> proposed retrieval/agent platform or replace independent specialist reviews.
+> The "exists now" inventory below refers to the original inspected revision.
+
 **Status: optional proposal, not an approved product scope or implementation.** Fact Checker's [bounded independent review](review.md) approves the proposal only; remaining specialist reviews are pending. No database, embedding model, extraction service, retrieval API, agent runtime or cloud workload is claimed implemented by this plan. Approval of the persistent team is not approval of these components.
 
 ## 1. Executive proposal and evidence boundary

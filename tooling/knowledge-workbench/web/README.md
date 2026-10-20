@@ -41,7 +41,9 @@ repository list. No filesystem path is accepted by the UI.
    explicitly load and freshly verify an existing generation.
 2. Choose C++17 or C++20 and assess sources. Assessment shows the selected scope,
    configured size limits, include roots, defines, and diagnostics. This operation
-   does not run build scripts.
+   does not run build scripts. Use **C++20** for this repository's two examples:
+   the modernized source uses `std::endian`. If an existing C++17 generation is
+   partial, reassess with C++20 and explicitly generate a replacement.
 3. Explicitly generate a graph. The client polls only the job it submitted.
    Cancellation is requested from the API; a late cancellation during publishing
    can be rejected and is shown as an error, not a successful cancellation.
@@ -78,6 +80,8 @@ every 15 seconds: amber means checking, green means a live query passed, and red
 means the check failed. Each has a retry button and a 12-second timeout. The
 SQLite check verifies the history schema and queries its tables. These checks
 do not load graphs, scan sources or generate anything.
+A green light is not proof of graph completeness, source freshness, matching
+compiler settings or conversion safety.
 
 ## Conversion and saved history
 
@@ -86,9 +90,10 @@ repository is preserved, or you can select one there. This opens the conversion
 workflow, not an automatic conversion or graph-generation job.
 Choose **Refresh graph context** to explicitly load and verify the Neo4j generation.
 The conversion page does not fetch graph context on mount, including saved-job links.
-Use its profile settings
-and assess/select inputs before confirming record assumptions. Missing,
-incomplete, changed or profile-mismatched graphs cannot start conversion.
+Use its profile settings and assess/select inputs before confirming record
+assumptions. Generate a complete matching graph on the **Knowledge graph** page
+first if none is available. Missing, incomplete, changed or profile-mismatched
+graphs cannot start conversion.
 Progress and side-by-side comparisons show the generation used for the draft.
 The server independently parses generated output; graph reuse is not target
 runtime validation.

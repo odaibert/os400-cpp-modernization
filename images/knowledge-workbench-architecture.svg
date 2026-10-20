@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1260" viewBox="0 0 1600 1260" role="img" aria-labelledby="title description">
+  <title id="title">Implemented local knowledge workbench architecture</title>
+  <desc id="description">A React browser uses a loopback FastAPI backend and shared service. The backend coordinates Neo4j structural graphs, private SQLite jobs and sessions, a JSON repository registry and a single generation or conversion worker. The worker invokes a bounded native Clang parser subprocess and reads trusted local C++ inputs without overwriting them. Graph operations require explicit user actions.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#495057"/>
+    </marker>
+  </defs>
+  <style>
+    text { fill: #000000; font-family: Helvetica, Arial, sans-serif; font-size: 18px; }
+    .heading { font-size: 30px; font-weight: 700; }
+    .label { font-size: 22px; font-weight: 700; }
+    .small { font-size: 16px; }
+    .boundary { fill: none; stroke: #495057; stroke-width: 2; stroke-dasharray: 10 7; }
+    .input { fill: #a5d8ff; stroke: #1864ab; stroke-width: 2; }
+    .process { fill: #fff3bf; stroke: #e67700; stroke-width: 2; }
+    .database { fill: #f3d9fa; stroke: #862e9c; stroke-width: 2; }
+    .neutral { fill: #dee2e6; stroke: #495057; stroke-width: 2; }
+    .flow { fill: none; stroke: #495057; stroke-width: 2; marker-end: url(#arrow); }
+    .exchange { marker-start: url(#arrow); }
+  </style>
+  <rect width="1600" height="1260" fill="#ffffff"/>
+  <text x="40" y="55" class="heading">Knowledge workbench: implemented architecture</text>
+  <rect x="40" y="90" width="1520" height="100" rx="14" class="neutral"/>
+  <text x="65" y="132">Graph operations require explicit actions. Database health checks do not load or generate graphs.</text>
+  <text x="65" y="165">Local deterministic processing; original C++ sources are never overwritten.</text>
+  <rect x="20" y="210" width="1560" height="1020" rx="16" class="boundary"/>
+  <text x="45" y="240" class="small">TRUSTED LOCAL WORKSTATION / LOOPBACK-ONLY SERVICES</text>
+
+  <rect x="50" y="280" width="340" height="200" rx="14" class="input"/>
+  <text x="75" y="320" class="label">React browser portal</text>
+  <text x="75" y="360">Graph actions, zoom and evidence</text>
+  <text x="75" y="394">Conversion comparison + history</text>
+  <text x="75" y="428" class="small">No direct database connection</text>
+
+  <rect x="500" y="280" width="500" height="200" rx="14" class="process"/>
+  <text x="525" y="320" class="label">FastAPI + shared service</text>
+  <text x="525" y="360">Session / CSRF boundary; built frontend</text>
+  <text x="525" y="394">WorkbenchService + JobManager</text>
+  <text x="525" y="428" class="small">Coordinates graph verification and persistence</text>
+
+  <rect x="1140" y="280" width="390" height="200" rx="14" class="database"/>
+  <text x="1165" y="320" class="label">Neo4j</text>
+  <text x="1165" y="360">Structural graph + evidence spans</text>
+  <text x="1165" y="394">Manifest / profile / generation</text>
+  <text x="1165" y="428" class="small">Only graph backend; no source snapshots</text>
+
+  <rect x="50" y="690" width="340" height="180" rx="14" class="neutral"/>
+  <text x="75" y="730" class="label">Private JSON registry</text>
+  <text x="75" y="770">repositories.json</text>
+  <text x="75" y="804">Repository IDs, names and roots</text>
+  <text x="75" y="838" class="small">CLI registration; no source contents</text>
+
+  <rect x="500" y="690" width="500" height="200" rx="14" class="process"/>
+  <text x="525" y="730" class="label">One generation / conversion worker</text>
+  <text x="525" y="770">Guarded graph-backed conversion recipes</text>
+  <text x="525" y="804">Bounded native Clang parser subprocess</text>
+  <text x="525" y="838" class="small">In-memory draft reparse; no application execution</text>
+
+  <rect x="1140" y="690" width="390" height="200" rx="14" class="database"/>
+  <text x="1165" y="730" class="label">Private SQLite</text>
+  <text x="1165" y="770">Conversion history + session hashes</text>
+  <text x="1165" y="804">Requests, progress, recipes, provenance</text>
+  <text x="1165" y="838" class="small">Not a graph store or an offline fallback</text>
+
+  <rect x="500" y="1060" width="500" height="140" rx="14" class="input"/>
+  <text x="525" y="1100" class="label">Trusted local C++ inputs</text>
+  <text x="525" y="1140">Read and hash; virtual AST inputs stay in memory</text>
+  <text x="525" y="1174" class="small">Generated drafts are separate reviewable downloads</text>
+
+  <path d="M 390 365 H 500" class="flow exchange"/>
+  <text x="410" y="325" class="small">HTTP</text>
+  <path d="M 1000 365 H 1140" class="flow exchange"/>
+  <text x="1018" y="325" class="small">Graph facts</text>
+  <path d="M 750 480 V 690" class="flow exchange"/>
+  <text x="775" y="580">Explicit bounded jobs</text>
+  <text x="775" y="610" class="small">Progress / results</text>
+  <path d="M 500 420 H 445 V 780 H 390" class="flow exchange"/>
+  <text x="265" y="605" class="small">Root lookup / removal</text>
+  <path d="M 1000 420 H 1070 V 780 H 1140" class="flow exchange"/>
+  <text x="1100" y="585" class="small">Sessions + owned job records</text>
+  <path d="M 750 1060 V 890" class="flow"/>
+  <text x="775" y="965">Read-only inputs</text>
+  <text x="775" y="995" class="small">Manifest checked before output</text>
+  <text x="50" y="1130" class="small">The API and worker share one process.</text>
+  <text x="50" y="1160" class="small">Clang parsing runs in a child process,</text>
+  <text x="50" y="1190" class="small">not a hostile-input OS sandbox.</text>
+  <text x="1140" y="1130" class="small">Neo4j may run in local Docker.</text>
+  <text x="1140" y="1160" class="small">No hosted AI / Pinecone / agent runtime.</text>
+  <text x="1140" y="1190" class="small">As-built design: 2026-10-20.</text>
+</svg>
